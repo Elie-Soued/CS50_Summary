@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="navbar.js" type="module"></script>
+    <script src="utils.js" type="module"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="/images/htmlfavicon.png" rel="icon" type="image/png" />
+    <title>The Web</title>
+  </head>
+  <body class="d-flex flex-column align-items-center">
+    <header class="d-flex flex-column justify-content-center w-75 h-auto">
+      <nav-bar-50></nav-bar-50>
+      <img src="/images/webThumbnail.jpg" class="image_top" />
+    </header>
+    <main class="image_top">
+      <section class="image_top">
+        <h3>What is the Internet?</h3>
+        <p>
+          The internet is a global network of interconnected devices that share
+          information. <br />
+          The protocol suite used to share information is called TCP/IP. <br />
+          Just like "computer science" is a misleading name, TCP/IP is also
+          somewhat misleading because TCP and IP are not the only protocols used
+          in the TCP/IP protocol suite (though they are the most fundamental and
+          well-known).<br />
+          The TCP/IP protocol suite can be conceptualized as a five-layer
+          model:<br />
+
+          -Application layer<br />
+          -Transport layer<br />
+          -Network layer<br />
+          -Data link layer<br />
+          -Physical layer<br />
+
+          Let's look at each of these layers to understand how information is
+          shared over the internet:<br />
+          <br />
+          <b>Application layer</b><br />
+          3 things happen on the application layer:<br />
+          1- The application produces binary data<br />
+          2- The protocol we use to send the information is chosen. It could be
+          HTTP, HTTPS, FTP, SMTP or SSH.<br />
+          3- DNS lookup is done to resolve the IP address of the destination
+          server.<br />
+
+          <br />
+          <b>Transport layer</b><br />
+          The binary data from the application layer is broken down into small
+          chuncks called segments.<br />
+          A header is added to each segments containing:<br />
+          1- The destination port to identify the service we want to access ( by
+          convention port 443 is for HTTPS request and port 25 is for emails)<br />
+          2- The source port to allow multiplexing (meaning many people can send
+          simultaneous requests from the same network)<br />
+          3- The sequence number of the segment to be able to assemble it upon
+          reception.<br />
+
+          The protocol that defines how these segments are created is called
+          TCP.(There is another protocol that could be used at this layer called
+          UDP, but this is outside of the scope of this course).<br />
+          At this layer we establish a TCP connection between the source and the
+          destination server.<br />
+          The protocol defined on the application works on top of the TCP
+          connection.<br />
+          <br />
+          <b>Network layer</b><br />
+          We add to the segments an additional header containing the IP source
+          and destination. Making the segment packets.<br />
+          By containing the IP information, the packets can be correctly routed
+          to the destination server.<br />
+          The Routers are servers that will inspect the packets, check the IP
+          and route the packet closer to the their destination.<br />
+          <br />
+          <b>Data link layer</b><br />
+          This layer is responsible of getting the Mac address of the
+          destination server.<br />
+          So once the data reaches the destination network, it uses 2 protocols
+          (ARP and Ethernet) to get the MAC address.<br />
+          The MAC address is added to the packets making it a Frame.<br />
+          At this point the data is ready to be sent.<br />
+          The 4 steps that prepare the data to be sent is what we call :
+          encapsulation.<br />
+          Once the data reaches the destination server the same steps are done
+          in the opposite direction (decapsulation)<br />
+          <br />
+          <b>Physical layer</b><br />
+          When sending information, the binary data is transformed into
+          electrical current and sent through the network.<br />
+          When receiving information, the electrical current is transformed to
+          binary data and sent back up to the application level passing by all
+          the other layers in the opposite direction.<br />
+          The most important step in decapsulation happens at the transport
+          layer, where the data is reassembled (thanks to the sequence number in
+          the TCP header) and sent back to the application layer.<br />
+        </p>
+
+        <img src="/images/internet.png" class="small_image" />
+      </section>
+    </main>
+
+    <footer>
+      <p></p>
+    </footer>
+  </body>
+</html>

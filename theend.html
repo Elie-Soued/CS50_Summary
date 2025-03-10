@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="navbar.js" type="module"></script>
+    <script src="utils.js" type="module"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="" rel="icon" type="image/png" />
+    <title>The End</title>
+  </head>
+  <body class="d-flex flex-column align-items-center">
+    <header class="d-flex flex-column justify-content-center w-75 h-auto">
+      <nav-bar-50></nav-bar-50>
+      <img src="/images/theEndThubmnail.jpg" class="image_top" />
+    </header>
+    <main class="image_top">
+      <section class="image_top">
+        <p>
+
+
+
+Instead of recapping all the subjects covered in CS50, I decided to spend time on a fundamental that was briefly introduced in CS50 which is recursion. <br>
+ 
+
+<h4>What is Recursion?</h4>
+
+
+Just like iteration, recursion is a technique to solve a problem that involves repetition.<br>
+
+A recursive function typically calls itself to break down a bigger problem into smaller subproblems (recursive case) and uses a condition (base case) to stop the recursive calls, thereby avoiding an infinite loop.<br>
+ 
+
+Below is the implementation of a multiply function.<br> 
+The first implementation uses a recursion and the second one an iteration:<br>
+
+<pre class="code-block"><code>
+const multiply_recursive = (a,b) => {
+
+    if( b == 1 ){
+        return a;
+    }
+
+    return a + multiply_recursive(a, b - 1);
+}
+
+
+const multiply_iterative = (a, b) => {
+
+    let total = 0;
+
+    for(let i = 0; i < b ; i++){
+
+        total = total + a 
+
+    }
+
+    return total;
+}
+
+</code>
+</pre>
+
+As you can see a recursive function can be written iteratively and an iterative function can be written recursively.<br>
+<br>
+ 
+
+
+<h4>Recursion and the call stack</h4>
+
+
+One of the fundamental difference between recursion and iteration is how the code is executed.<br>
+
+A recursive function goes through 3 stages:<br>
+
+1- A winding stage where we are adding function calls to the call stack.<br>
+2- A base case where a specific value is reached.<br>
+3- An unwinding stage where the functions in the call stack are evaluated one by one to return the value of the parent function.<br>
+
+Let's take a look at how the recursive function works:<br>
+<br>
+
+<b>Stage 1: winding</b> <br>
+
+<pre class="code-block"><code>
+multiply_recursive(5,4);<br>
+
+multiply_recursive(5,4) -> returns 5 + multiply_recursive(5,3);<br>
+
+multiply_recursive(5,3) -> returns 5 + multiply_recursive(5,2);<br>
+
+multiply_recursive(5,2) -> returns 5 + multiply_recursive(5,1);<br>
+</code>
+</pre>
+
+
+<b>Stage 2 : base case</b> <br>
+
+<pre class="code-block"><code>
+multiply_recursive(5,1) -> returns 5 (base case reached)<br>
+</code>
+</pre>
+
+
+<b>Stage 3 : unwinding</b> <br>
+
+Since we reached the base case and we know that multiply_recursive(5,1) = 5; we can get the value of multiply_recursive(5,2), etc.. <br>
+
+
+<pre class="code-block"><code>
+multiply_recursive(5,1) = 5 // base case <br>
+
+multiply_recursive(5,2) = return 5 + 5 // 10<br>
+
+multiply_recursive(5,3) = return 5 + 10 // 15<br>
+
+multiply_recursive(5,4) = return 5 + 15 // 20<br>
+</code>
+</pre>
+
+
+<br>
+<h4>The problem with recursion</h4>
+
+By looking at the 3 stages of recursion, we can directly see how recursion can be present <b>performance issues</b>.<br>
+Calling multiply_recursive(5,10000) for example, <b>will add 10000 calls on the call stack</b> which will cause a <b>stack overflow</b>.<br> 
+Calling multiply_iterative(5,10000) on the other hand will create a single function call on the call stack.<br>
+Both recursion and iteration have a time complexity of O(n).<br>
+However, recursion has a <b>space complexity of O(n)</b> due to the call stack, while iteration has a space complexity of O(1) since it does not use additional memory for function calls.<br>
+
+<br>
+<h4>Tail recursion</h4> 
+
+There is a way to mitigate the performance issue of recursion.<br>
+
+Consider the following function:<br>
+
+<pre class="code-block"><code>
+const multiply_recursive_tail = (a,b,total) => {
+
+
+    if ( b == 0){
+        return total
+    }
+
+    return  multiply_recursive_tail ( a, b -1 , total + a)
+
+}
+
+
+multiply_recursive_tail(5,4,0) // 20
+
+</code>
+</pre>
+
+
+In this example we are incrementing the value of total on each call.<br>
+Once we reached the base case, we only have to return the total variable.<br>
+This technique is called tail recursion.<br>
+In tail recursion there is no unwinding phase as the result is directly returned when we reach the base case.<br>
+The winding phase is also different : each new function replaces the previous one and the call stack does not grow.<br>
+
+
+<br>
+<h4>So when should you use recursion over iteration?</h4> 
+
+
+It is almost always better for the machine to use an iteration over a recursion.<br>
+A recursion could be more elegant and more readable for a human to implement when solving problems that involves a recursive structure like:<br>
+Tree traversal (e.g., DOM traversal, binary trees)<br>
+Graph traversal (DFS, backtracking)<br>
+Divide and conquer algorithms (QuickSort, MergeSort)<br>
+Mathematical sequences (Fibonacci, factorial)<br>
+        </p>
+
+        <div class="image_holder" >
+          <img src="/images/recursion.JPG" class="small_image" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p></p>
+    </footer>
+  </body>
+</html>
