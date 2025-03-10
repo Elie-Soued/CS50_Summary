@@ -10,15 +10,16 @@ main
 
 {
     padding-top : 1rem;
-    width: 75%;
+
+
     height: auto;
 }
 
 
 .image_holder
 {
-    width: 377px;
-    height: auto;
+
+
     overflow: hidden;
 }
 
@@ -27,19 +28,30 @@ main
 
 {
 
+
      width: 100%;
 }
 
 
 .image_top
 {
-    width: 75%;     
+    width: 100%;     
     height: auto;
+    padding: 1rem;
+
+
 
 }
 
 a {
     text-decoration: none;
+}
+
+
+
+
+header{
+    width: 100%;    
 }
 
 

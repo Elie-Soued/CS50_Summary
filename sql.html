@@ -17,11 +17,11 @@
     <script src="navbar.js" type="module"></script>
     <script src="utils.js" type="module"></script>
     <link href="styles.css" rel="stylesheet" />
-    <link href="/images/sqlfavicon.png" rel="icon" type="image/png" />
+    <link href="/images/logo.png" rel="icon" type="image/png" />
     <title>SQL</title>
   </head>
   <body class="d-flex flex-column align-items-center">
-    <header class="d-flex flex-column justify-content-center w-75 h-auto">
+    <header class="d-flex flex-column justify-content-center h-auto">
       <nav-bar-50></nav-bar-50>
       <img   src="/images/sqlthumbnail.jpg"  class="image_top"/>
     </header>
@@ -70,8 +70,8 @@ If you want to know the names of all the student that took a specific course, wi
 And then join the 2 tables on this table like this:<br>
 SELECT name FROM Student JOIN student_course ON Student.id = student_course.student_id  JOIN Courses ON Courses.id = student_course.course_id  WHERE Courses.subject = 'Computer Science';<br>
       </p>
-
-      <table class="table table-striped">
+      <div class="table-responsive">
+      <table class="table table-striped ">
         <thead>
           <tr>
             <th>Relationship</th>
@@ -101,6 +101,7 @@ SELECT name FROM Student JOIN student_course ON Student.id = student_course.stud
           </tr>
         </tbody>
       </table>
+    </div>
 
 
 

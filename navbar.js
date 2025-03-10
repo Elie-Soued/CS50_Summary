@@ -10,7 +10,7 @@ class NavBar50  extends HTMLElement{
         this.shadowRoot.innerHTML = `
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-                    <nav class= "p-3 navbar navbar-expand-lg navbar-light bg-light w-75 h-auto" >
+                    <nav class= "p-3 navbar navbar-expand-lg navbar-light bg-light  h-auto" >
                 <div  id="navbarNav">
                   <ul class="navbar-nav">
                     <li class="nav-item active">
