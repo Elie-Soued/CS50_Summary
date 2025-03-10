@@ -15,6 +15,11 @@
       crossorigin="anonymous"
     ></script>
     <script src="navbar.js" type="module"></script>
+    <script
+    src="https://kit.fontawesome.com/daab63f830.js"
+    crossorigin="anonymous"
+    defer
+  ></script>
     <script src="utils.js" type="module"></script>
     <link href="styles.css" rel="stylesheet" />
     <link href="/images/logo.png" rel="icon" type="image/png" />
@@ -22,7 +27,6 @@
   </head>
   <body class="d-flex flex-column align-items-center">
     <header class="d-flex flex-column justify-content-center h-auto">
-      <nav-bar-50></nav-bar-50>
       <img   src="/images/sqlthumbnail.jpg"  class="image_top"/>
     </header>
     <main class="image_top">
@@ -140,9 +144,18 @@ rows = db.execute ("SELECT * FROM users WHERE username = ? AND password = ? ", u
       <p>
 Python and SQL are languages that are also used a lot in Web programming.<br>
 In the 90s the world wide web as we know it was created.<br>
-Do you know how the <a href="/htmlcssjs.html">world wide web</a> works?
+Do you know how the world wide web works?
 
       </p>
+
+
+      <a href="/python.html">
+        <i class="far fa-arrow-alt-circle-left"></i>
+      </a>
+      <a href="/htmlcssjs.html">
+        <i class="far fa-arrow-alt-circle-right"></i>
+      </a>
+
     </footer>
   </body>
 </html>
