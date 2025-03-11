@@ -6,6 +6,40 @@ h1
 }
 
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .snap-start {
+    scroll-snap-align: start;
+  }
+
+
+
+.container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.page {
+    height: 100vh; /* Each page takes exactly one viewport height */
+    scroll-snap-align: start; /* Snap to the start of each page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add additional styling as needed */
+  }
+
 main
 
 {
