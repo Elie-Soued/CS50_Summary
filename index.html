@@ -27,29 +27,856 @@
     <title>This is CS50!</title>
   </head>
 
-  <body class="d-flex flex-column align-items-center">
-    <header class="d-flex flex-column justify-content-center h-auto">
-      <img src="/images/cs50.jpg" class="image_top" />
-    </header>
-    <main class="image_top">
-      <section class="image_top">
-        <h3>My take aways from CS50</h3>
+  <body>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img src="/images/cs50.jpg" class="image_top" />
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+          <h3>My take aways from CS50</h3>
+          <p>
+            Taking CS50 was one of the best decisions of this year. <br />
+            I really learned a lot and recommend it to anyone who wants to
+            pursue a career in computer science. <br />
+            Initially, I started summarizing what I learned to better organize
+            and digest the information I was absorbing. <br />
+            For each of the 10 weeks, I plan to share either a topic I learned
+            in the course or a topic the course inspired me to explore further
+            (such as during the Python section). <br />
+            I hope you will find this article informative and insightful. <br />
+            Enjoy!<br />
+          </p>
+        </section>
+      </main>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img src="/images/scratchThumbnail.jpg" class="image_top" />
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+          <h3>What is Computer Science?</h3>
+
+          <p>
+            Computer science is the study of information and how we use
+            information to solve problems.
+            <br />
+            The term "computer science" can be misleading because humans have
+            been using information to solve problems throughout history, long
+            before computers existed. <br />
+
+            Each era had its own information technology.
+          </p>
+
+          <p>
+            In our area, the technology that is at the core of modern computing
+            is the transistor.<br />
+            A transistor is a piece of hardware that controls electrical current
+            by switching it on and off.<br />
+            Computers interpret an "on" state as 1 and an "off" state as 0.
+            <br />
+            0 and 1 are called bits or Binary digIT.
+          </p>
+
+          <p>
+            We decided to represent information by using 8 of these bits also
+            known as 1 byte.<br />
+            Based on the context, these bytes can represent numbers, letters,
+            colors and sound.<br />
+            If natural Languages allows us to communicate with other humans,
+            programming languages allows us to manipulates bytes and to
+            communicate with machines.<br />
+          </p>
+
+          <div class="image_holder">
+            <img src="/images/transistors.jpeg" class="small_image" />
+          </div>
+        </section>
+      </main>
+
+      <footer>
         <p>
-          Taking CS50 was one of the best decisions of this year. <br />
-          I really learned a lot and recommend it to anyone who wants to pursue
-          a career in computer science. <br />
-          Initially, I started summarizing what I learned to better organize and
-          digest the information I was absorbing. <br />
-          For each of the 10 weeks, I plan to share either a topic I learned in
-          the course or a topic the course inspired me to explore further (such
-          as during the Python section). <br />
-          I hope you will find this article informative and insightful. <br />
-          Enjoy!<br />
-          <a href="/scratch.html">
-            <i class="far fa-arrow-alt-circle-right"></i>
-          </a>
+          Let's take a look at the GOAT of programming languages : The C
+          Language .
         </p>
+      </footer>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img src="/images/cThumbnail.jpg" class="image_top" />
+      </header>
+      <br />
+      <main class="image_top">
+        <section class="image_top">
+          <h3>Why is it interesting to learn C?</h3>
+
+          <p>
+            Learning C is like learning to drive a manual car : it gives you a
+            deeper understanding of the underlying mechanisms that higher-level
+            languages abstract away.<br />
+            In C, you can see how fundamental data structures like strings,
+            hashmaps, and arrays are implemented and represented in memory.<br />
+            In contrast, high-level languages hide these details from the
+            programmer, managing them automatically.<br />
+            Studying C also helps you appreciate the challenges faced by
+            programmers when designing programming languages, particularly in
+            handling dynamic data structures.<br />
+            Unlike numbers, structures like strings and lists have unpredictable
+            sizes, requiring careful management of dynamic memory allocation.<br />
+          </p>
+
+          <img src="/images/cimage.png" class="small_image" />
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          Wanna see (no pun intended) how dynamic memory allocation is managed
+          in C?
+        </p>
+      </footer>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center  h-auto">
+   
+        <img src="/images/memoryThumbnail.jpg" class="image_top" />
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+          <h3>Dynamic Memory Allocation : Pointers to the rescue</h3>
+  
+          <p>
+            C introduces data types (int, float, double, long, and char) that have
+            specific sizes in memory.<br />
+            If I want to represent the number 47, I typically use an int, which
+            takes 4 bytes in my computer's memory—equivalent to 32 bits.<br />
+  
+            But what if you want the user to input their name? How many char
+            values would you need?<br />
+            The answer is: we don’t know, because names vary in length.<br />
+  
+            <h5>Strings</h5>
+  
+            This brings us to our first challenge with dynamic data.<br />
+            Strings are inherently dynamic, so we needed a strategy to represent
+            them efficiently in memory.<br />
+  
+            To solve this, it was decided to terminate strings with a NUL (\0)
+            character. This allowed us to determine where a string ends.<br />
+  
+            Alright, but how do we determine where a string starts?<br />
+            For that, we use pointers, which store memory addresses of
+            variables.<br />
+  
+            So, to represent a string, we typically store a memory address
+            (indicating where the string starts) and end it with a NUL character
+            (\0).<br />
+          </p>
+  
+          <h5>Arrays</h5>
+  
+          <p>
+            Our second challenge with dynamic data relates to arrays.<br />
+            In C, arrays are not dynamic.<br />
+  
+            If we want to add a new element to an array, we need to allocate new
+            memory, copy all the existing elements into it, and then add the new
+            value.<br />
+            This process is inefficient, especially for large arrays.<br />
+  
+            Once again, pointers come to the rescue.<br />
+            To solve the issue of array dynamism, we use pointers to create linked
+            lists.<br />
+  
+            A linked list is a collection of nodes, where each node contains a
+            value and a pointer to the next node.<br />
+            This approach allows us to dynamically add elements to the list
+            without needing to find a contiguous block of memory, unlike arrays
+            which must be allocated as a single, continuous chunk.
+          </p>
+  
+          <div class="image_holder">
+            <img src="/images/computer-memory.jpg" class="small_image" />
+          </div>
+        </section>
+      </main>
+  
+      <footer class="w-75 h-auto">
+        <p class="p-3">
+          Alright so we looked at Arrays and linkedlists, what other  data structures are there?
+        </p>
+  
+      </footer>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img src="/images/datastructureThumbnail.jpg" class="image_top" />
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+          <p>
+            We tend to study data structures and algorithms together because they
+            are – as you can imagine – related.<br />
+            Data structures allow us to
+            <i>represent, store and access data </i> whereas algorithms allow us
+            to <i>manipulate</i> this data.<br />
+            But before diving into the relationship between data structures and
+            algorithms, let's start with some definitions:<br />
+            <br />
+          </p>
+  
+          <h4>Data Structure vs Abstract Data type</h4>
+  
+          A <b>Data structure</b> is a way to organize data in a computer memory
+          to enable efficient access and modification.<br />
+          It defines the relationship between the data and the operations that
+          could be performed on the data.<br />
+  
+          <b>Abstract data type</b> is an abstracted data structure than can be
+          implemented in different ways.<br />
+          A <i>dictionnary</i> is the idea that I want to assign a value to a
+          key.<br />
+          I can implement it with a "concrete" data structure like a hashmap.<br />
+          <br />
+  
+          <h4>Algorithm vs Function</h4>
+  
+          <h6>What is difference between a function and an algorithm?</h6>
+  
+          An algorithm is an abstracted series of instructions designed to
+          fulfilled a specific goal. Typically written in pseudo code.<br />
+          A function is a "concrete" series of instruction designed to fulfill a
+          specific goal. Typically written using a programming language.<br />
+          We need data structures and functions to implement an algorithm.<br />
+          <br />
+  
+          <img src="/images/algo.png" class="small_image" />
+          <br />
+          <br />
+          <h4>Algorithm Running time</h4>
+  
+          To evaluate an algorithm, we typically look at the best and worst case
+          scenario.<br />
+          How many operation does my alogrithm execute in the worst case?<br />
+          How many operations does it execute in the best case?<br />
+          We use the Big O notation to express the worst case scenario. O stands
+          for order.<br />
+          And we use Omega (Ω) to represent the best case scenario.<br />
+          In case an algorithm behaves the same in the best and in the worst case,
+          we say that this algorithm is in theta complexity.<br />
+          Array indexing will always take a constant time to execute. Therefore we
+          can say that array indexing is in theta of 1.
+  
+          <br />
+  
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Algorithm</th>
+                <th>Big O</th>
+                <th>Omega (Ω)</th>
+                <th>Theta (Θ)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bubble Sort</td>
+                <td>O(n²)</td>
+                <td>Ω(n)</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>Merge Sort</td>
+                <td>O(n log n)</td>
+                <td>Ω(n log n)</td>
+                <td>Θ(n log n)</td>
+              </tr>
+              <tr>
+                <td>Finding Max</td>
+                <td>O(n)</td>
+                <td>Ω(n)</td>
+                <td>Θ(n)</td>
+              </tr>
+              <tr>
+                <td>Binary Search</td>
+                <td>O(log n)</td>
+                <td>Ω(1)</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>Array Indexing</td>
+                <td>O(1)</td>
+                <td>Ω(1)</td>
+                <td>Θ(1)</td>
+              </tr>
+              <tr>
+                <td>Selection Sort</td>
+                <td>O(n²)</td>
+                <td>Ω(n²)</td>
+                <td>Θ(n²)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+      <footer>
+        <p>
+          Since an algorithm is a serie of abstracted instructions, we can
+          implement the same algorithm in different languages. <br />
+          I am sure you already heard about Python .
+        </p>
+  
+      </footer>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img src="/images/pythonThumbnail.jpg" class="image_top" />
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+          <h3>Lazy evaluation with Iterators</h3>
+          <div class="python-section">
+            <p>
+              In this section of the CS50 course, we take a look at the python
+              syntax, its data types and some more elaborated structures like
+              lists and dictionnaries.<br />
+              Coding in Python after C, allows you to better appreciate a higher
+              level of abstraction.<br />
+              Programs that required a tedious implementation in C, are done in a
+              few Python lines.<br />
+              Python introduces exceptions, object oriented programming, resolves
+              the issue of Integer overflow (but not the problem of floating point
+              imprecision) and possesses a broad range of librairies that allows
+              us to stand on the shoulder of giants.<br />
+              But I would like to talk about a feature that was not mentioned in
+              CS50 which is the Iterators.<br />
+              An iterator is an object that allows you to loop through a sequence
+              of data without having to store it in memory.<br />
+              This behavior is called lazy evaluation and it is very useful when
+              we want to loop over a very large or infinite data set (used a lot
+              in data science).<br />
+              <br />
+              Take a look at the below implementation that is <b>NOT</b> using
+              iterators:
+            </p>
+  
+            <pre class="code-block"><code>
+        def createData(bigNumber):
+            sequence = []
+            for i in range(bigNumber):
+                sequence.append(i * i)
+            return sequence 
+        
+        def loopWithoutIterator(bigNumber):
+            for value in createData(bigNumber):
+                if(value > 100):
+                    break
+                print(value)
+        
+        loopWithoutIterator(1000000)
+          </code></pre>
+  
+            <p class="code-comment">
+              Here we make a million calculation that we store in an array and
+              then we loop over this array set and print out the first eleven
+              values.
+            </p>
+  
+            <p>Now let's take a look at the strength of iterators:</p>
+  
+            <pre class="code-block"><code>
+        def createIterator(bigNumber):
+            for i in range(bigNumber):
+                yield i * i
+        
+        def loopWithIterator(bigNumber):
+            for i in createIterator(bigNumber):
+                if i > 100:
+                    break
+                print(i)
+        
+        loopWithIterator(1000000)
+          </code></pre>
+  
+            <p class="code-comment">
+              Here the iterator will yield one value on each outer iteration, and
+              if the value is smaller than 100 it will print it. So instead of
+              making 1000 000 calculation + 11 print out it will do 11 calculation
+              + 11 print outs
+            </p>
+          </div>
+  
+          <div class="image_holder">
+            <img src="/images/python.png" class="small_image" />
+          </div>
+        </section>
+      </main>
+  
+      <footer>
+        <p>
+          We mentioned that Python was heavily used in data science. <br />
+          Another language that is also very used in the field of AI and data
+          science is SQL.
+          <br />
+        </p>
+      </footer>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img   src="/images/sqlthumbnail.jpg"  class="image_top"/>
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+    
+  
+        <p>
+          SQL or structured query language is declarative language used for
+          relational databases.<br />
+          It is important to note that everything that is done in SQL could be
+          done in other languages.<br />
+          SQL has been designed to manipulate data more easily.<br />
+          One SQL line can replace many lines of python.<br />
+          Here also, we will not spend time on the syntax but rather on some
+          interesting concepts that we covered in the course.<br />
+  
+  
+          <h5>CRUD</h5>
+          The main actions that we make on a database are :<br />
+          C: Create / INSERT <br />
+          R: Read / SELECT<br />
+          U: Update / ALTER<br />
+          D: Delete / DROP
+        </p>
+        <p>
+          
+          <h5>Primary key, foreign key and join tables</h5>
+  
+  A primary key is a unique identifier that represents a row in a table.<br>
+  A Foreign Key is a key that represent a primary key of a different table.<br>
+  
+  Let's take an example to better understand the relationship between primary and foreign key:<br>
+  1-Table Company contains the following fields : Company Name, Product, Location and Company ID (Company ID is the primary key that will be used in a different table)<br>
+  2-Table Employee contains the following fields : Employee Name, Employee position, Company ID ( Company ID is a foreign key that reference the company in the company table)<br>
+  This is how combine information with SQL<br>
+  
+  In the case of many to many relations, we need to create a join table to connect the 2 tables.<br>
+  Let's take a look at an example here as well:<br>
+  <br>
+  
+  1-Field of Student Table : name,  major, id (primary key)<br>
+  2-Field of Courses Table :  subject,  duration, id (primary key)<br>
+  If you want to know the names of all the student that took a specific course, will need to create a third table (join table):<br>
+  3- student_course (join table) fields : student_id (foreign key) , course_id ( foreign key)<br>
+  And then join the 2 tables on this table like this:<br>
+  SELECT name FROM Student JOIN student_course ON Student.id = student_course.student_id  JOIN Courses ON Courses.id = student_course.course_id  WHERE Courses.subject = 'Computer Science';<br>
+        </p>
+        <div class="table-responsive">
+        <table class="table table-striped ">
+          <thead>
+            <tr>
+              <th>Relationship</th>
+              <th>Example</th>
+              <th>Schema</th>
+              <th>Foreign key placement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>One to One (1:1)</td>
+              <td>Person → Passport</td>
+              <td>passports.person_id UNIQUE </td>
+              <td>Foreign key in one table, set as unique.</td>
+            </tr>
+            <tr>
+              <td>One-to-Many (1:M)</td>
+              <td>Company → Employees</td>
+              <td>employees.company_id </td>
+              <td>Foreign key in the child table (employees).</td>
+            </tr>
+            <tr>
+              <td>Many-to-Many (M:M)</td>
+              <td>Students ↔ Courses</td>
+              <td>enrollments(student_id, course_id)</td>
+              <td>| Join table with two foreign keys. </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+  
+  
+        <p>
+          <br>
+  <h5>Indexes, Race conditions and SQL injections attacks</h5> 
+  
+  <br>
+  <b>Indexes</b><br>
+  create a B-tree structure (not binary tree structure) that allows us to access information faster.<br>
+  improves performance a lot when we want to read data from the database but might slow down the insertion and deletion ( as we saw with tree like structure<br>
+  That need to stay balanced). So they are great for read heavy sites.<br>
+  <br>
+  <b>Race conditions</b>
+  <br>
+  Imagine a picture goes viral and everyone in the world wants to like it at the same time.<br>
+  How can we make sure we can hanlde the database update in a way that data is not lost?<br>
+  So there are many techniques to handle this problem but we will focus on one in particular which is transcations and pessimistic locking.<br>
+  In our example, the transaction will group the reading and the updating of the likes in one operation and the locking will make sure that one transaction is executed at a time.<br>
+  For more on the topic look ACID properties in database<br>
+  <br>
+  <b>SQL Injection Attacks</b><br>
+  SQL Injection Attacks are malicious inputs that could give access to unauthorized information.<br>
+  If your API is using f format and not placeholders, I use could enter as username : name'-- <br>
+  The ' would close the first string and the -- would ignore everything after this command.<br>
+  So basically I user could access the account of someone by only entering the username and not the password.<br>
+  So use the placeholder instead of the f string.<br>
+  rows = db.execute (f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'") // Bad<br>
+  rows = db.execute ("SELECT * FROM users WHERE username = ? AND password = ? ", username , password)  // Better<br>
+        </p>
+          <img src="/images/SQL-Databases.png" class="small_image" />
       </section>
-    </main>
+      </main>
+  
+      <footer>
+        <p>
+  Python and SQL are languages that are also used a lot in Web programming.<br>
+  In the 90s the world wide web as we know it was created.<br>
+  Do you know how the world wide web works?
+  
+        </p>
+  
+  
+  
+      </footer>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img src="/images/webThumbnail.jpg" class="image_top" />
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+          <h3>What is the Internet?</h3>
+          <p>
+            The internet is a global network of interconnected devices that share
+            information. <br />
+            The protocol suite used to share information is called TCP/IP. <br />
+            Just like "computer science" is a misleading name, TCP/IP is also
+            somewhat misleading because TCP and IP are not the only protocols used
+            in the TCP/IP protocol suite (though they are the most fundamental and
+            well-known).<br />
+            The TCP/IP protocol suite can be conceptualized as a five-layer
+            model:<br />
+  
+            -Application layer<br />
+            -Transport layer<br />
+            -Network layer<br />
+            -Data link layer<br />
+            -Physical layer<br />
+  
+            Let's look at each of these layers to understand how information is
+            shared over the internet:<br />
+            <br />
+            <b>Application layer</b><br />
+            3 things happen on the application layer:<br />
+            1- The application produces binary data<br />
+            2- The protocol we use to send the information is chosen. It could be
+            HTTP, HTTPS, FTP, SMTP or SSH.<br />
+            3- DNS lookup is done to resolve the IP address of the destination
+            server.<br />
+  
+            <br />
+            <b>Transport layer</b><br />
+            The binary data from the application layer is broken down into small
+            chuncks called segments.<br />
+            A header is added to each segments containing:<br />
+            1- The destination port to identify the service we want to access ( by
+            convention port 443 is for HTTPS request and port 25 is for emails)<br />
+            2- The source port to allow multiplexing (meaning many people can send
+            simultaneous requests from the same network)<br />
+            3- The sequence number of the segment to be able to assemble it upon
+            reception.<br />
+  
+            The protocol that defines how these segments are created is called
+            TCP.(There is another protocol that could be used at this layer called
+            UDP, but this is outside of the scope of this course).<br />
+            At this layer we establish a TCP connection between the source and the
+            destination server.<br />
+            The protocol defined on the application works on top of the TCP
+            connection.<br />
+            <br />
+            <b>Network layer</b><br />
+            We add to the segments an additional header containing the IP source
+            and destination. Making the segment packets.<br />
+            By containing the IP information, the packets can be correctly routed
+            to the destination server.<br />
+            The Routers are servers that will inspect the packets, check the IP
+            and route the packet closer to the their destination.<br />
+            <br />
+            <b>Data link layer</b><br />
+            This layer is responsible of getting the Mac address of the
+            destination server.<br />
+            So once the data reaches the destination network, it uses 2 protocols
+            (ARP and Ethernet) to get the MAC address.<br />
+            The MAC address is added to the packets making it a Frame.<br />
+            At this point the data is ready to be sent.<br />
+            The 4 steps that prepare the data to be sent is what we call :
+            encapsulation.<br />
+            Once the data reaches the destination server the same steps are done
+            in the opposite direction (decapsulation)<br />
+            <br />
+            <b>Physical layer</b><br />
+            When sending information, the binary data is transformed into
+            electrical current and sent through the network.<br />
+            When receiving information, the electrical current is transformed to
+            binary data and sent back up to the application level passing by all
+            the other layers in the opposite direction.<br />
+            The most important step in decapsulation happens at the transport
+            layer, where the data is reassembled (thanks to the sequence number in
+            the TCP header) and sent back to the application layer.<br />
+          </p>
+  
+          <img src="/images/internet.png" class="small_image" />
+        </section>
+      </main>
+      <footer>
+        <p>
+          In this section, we saw how a request is sent to a server and how the
+          server sends a response back to the client using the TCP/IP protocol.<br />
+          But what happens exactly when the data reaches the server?<br />
+          Let's take a look at a python framework called Flask and see how the
+          request is handled on the server .
+        </p>
+      </footer>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img src="/images/scratchThumbnail.jpg" class="image_top" />
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+          <h3>What is Computer Science?</h3>
+  
+          <p>
+            Computer science is the study of information and how we use
+            information to solve problems.
+            <br />
+            The term "computer science" can be misleading because humans have been
+            using information to solve problems throughout history, long before
+            computers existed. <br />
+  
+            Each era had its own information technology.
+          </p>
+  
+          <p>
+            In our area, the technology that is at the core of modern computing is
+            the transistor.<br />
+            A transistor is a piece of hardware that controls electrical current
+            by switching it on and off.<br />
+            Computers interpret an "on" state as 1 and an "off" state as 0. <br />
+            0 and 1 are called bits or Binary digIT.
+          </p>
+  
+          <p>
+            We decided to represent information by using 8 of these bits also
+            known as 1 byte.<br />
+            Based on the context, these bytes can represent numbers, letters,
+            colors and sound.<br />
+            If natural Languages allows us to communicate with other humans,
+            programming languages allows us to manipulates bytes and to
+            communicate with machines.<br />
+          </p>
+  
+          <div class="image_holder">
+            <img src="/images/transistors.jpeg" class="small_image" />
+          </div>
+        </section>
+      </main>
+  
+      <footer>
+        <p>
+          Let's take a look at the GOAT of programming languages : The C Language
+          .
+        </p>
+      </footer>
+    </section>
+    <section class="d-flex flex-column align-items-center min-vh-100">
+      <header class="d-flex flex-column justify-content-center h-auto">
+        <img src="/images/theEndThubmnail.jpg" class="image_top" />
+      </header>
+      <main class="image_top">
+        <section class="image_top">
+          <p>
+  
+  
+  
+  Instead of recapping all the subjects covered in CS50, I decided to spend time on a fundamental that was briefly introduced in CS50 which is recursion. <br>
+   
+  
+  <h4>What is Recursion?</h4>
+  
+  
+  Just like iteration, recursion is a technique to solve a problem that involves repetition.<br>
+  
+  A recursive function typically calls itself to break down a bigger problem into smaller subproblems (recursive case) and uses a condition (base case) to stop the recursive calls, thereby avoiding an infinite loop.<br>
+   
+  
+  Below is the implementation of a multiply function.<br> 
+  The first implementation uses a recursion and the second one an iteration:<br>
+  
+  <pre class="code-block"><code>
+  const multiply_recursive = (a,b) => {
+  
+      if( b == 1 ){
+          return a;
+      }
+  
+      return a + multiply_recursive(a, b - 1);
+  }
+  
+  
+  const multiply_iterative = (a, b) => {
+  
+      let total = 0;
+  
+      for(let i = 0; i < b ; i++){
+  
+          total = total + a 
+  
+      }
+  
+      return total;
+  }
+  
+  </code>
+  </pre>
+  
+  As you can see a recursive function can be written iteratively and an iterative function can be written recursively.<br>
+  <br>
+   
+  
+  
+  <h4>Recursion and the call stack</h4>
+  
+  
+  One of the fundamental difference between recursion and iteration is how the code is executed.<br>
+  
+  A recursive function goes through 3 stages:<br>
+  
+  1- A winding stage where we are adding function calls to the call stack.<br>
+  2- A base case where a specific value is reached.<br>
+  3- An unwinding stage where the functions in the call stack are evaluated one by one to return the value of the parent function.<br>
+  
+  Let's take a look at how the recursive function works:<br>
+  <br>
+  
+  <b>Stage 1: winding</b> <br>
+  
+  <pre class="code-block"><code>
+  multiply_recursive(5,4);<br>
+  
+  multiply_recursive(5,4) -> returns 5 + multiply_recursive(5,3);<br>
+  
+  multiply_recursive(5,3) -> returns 5 + multiply_recursive(5,2);<br>
+  
+  multiply_recursive(5,2) -> returns 5 + multiply_recursive(5,1);<br>
+  </code>
+  </pre>
+  
+  
+  <b>Stage 2 : base case</b> <br>
+  
+  <pre class="code-block"><code>
+  multiply_recursive(5,1) -> returns 5 (base case reached)<br>
+  </code>
+  </pre>
+  
+  
+  <b>Stage 3 : unwinding</b> <br>
+  
+  Since we reached the base case and we know that multiply_recursive(5,1) = 5; we can get the value of multiply_recursive(5,2), etc.. <br>
+  
+  
+  <pre class="code-block"><code>
+  multiply_recursive(5,1) = 5 // base case <br>
+  
+  multiply_recursive(5,2) = return 5 + 5 // 10<br>
+  
+  multiply_recursive(5,3) = return 5 + 10 // 15<br>
+  
+  multiply_recursive(5,4) = return 5 + 15 // 20<br>
+  </code>
+  </pre>
+  
+  
+  <br>
+  <h4>The problem with recursion</h4>
+  
+  By looking at the 3 stages of recursion, we can directly see how recursion can be present <b>performance issues</b>.<br>
+  Calling multiply_recursive(5,10000) for example, <b>will add 10000 calls on the call stack</b> which will cause a <b>stack overflow</b>.<br> 
+  Calling multiply_iterative(5,10000) on the other hand will create a single function call on the call stack.<br>
+  Both recursion and iteration have a time complexity of O(n).<br>
+  However, recursion has a <b>space complexity of O(n)</b> due to the call stack, while iteration has a space complexity of O(1) since it does not use additional memory for function calls.<br>
+  
+  <br>
+  <h4>Tail recursion</h4> 
+  
+  There is a way to mitigate the performance issue of recursion.<br>
+  
+  Consider the following function:<br>
+  
+  <pre class="code-block"><code>
+  const multiply_recursive_tail = (a,b,total) => {
+  
+  
+      if ( b == 0){
+          return total
+      }
+  
+      return  multiply_recursive_tail ( a, b -1 , total + a)
+  
+  }
+  
+  
+  multiply_recursive_tail(5,4,0) // 20
+  
+  </code>
+  </pre>
+  
+  
+  In this example we are incrementing the value of total on each call.<br>
+  Once we reached the base case, we only have to return the total variable.<br>
+  This technique is called tail recursion.<br>
+  In tail recursion there is no unwinding phase as the result is directly returned when we reach the base case.<br>
+  The winding phase is also different : each new function replaces the previous one and the call stack does not grow.<br>
+  
+  
+  <br>
+  <h4>So when should you use recursion over iteration?</h4> 
+  
+  
+  It is almost always better for the machine to use an iteration over a recursion.<br>
+  A recursion could be more elegant and more readable for a human to implement when solving problems that involves a recursive structure like:<br>
+  Tree traversal (e.g., DOM traversal, binary trees)<br>
+  Graph traversal (DFS, backtracking)<br>
+  Divide and conquer algorithms (QuickSort, MergeSort)<br>
+  Mathematical sequences (Fibonacci, factorial)<br>
+          </p>
+  
+          <div class="image_holder" >
+            <img src="/images/recursion.JPG" class="small_image" />
+          </div>
+        </section>
+      </main>
+  
+      <footer>
+        <p>
+  That's it for now :) <br>
+  I hope you enjoyed the topics covered in this article.<br>
+  Feel free to reachout in case you believe some of the explanations are off.
+  
+        </p>
+  
+      </footer>
+    </section>
   </body>
 </html>
