@@ -27,7 +27,16 @@ main
 
 {
 
-     width: 100%;
+     max-width: 400px;
+}
+
+
+header{
+    width:75%
+}
+
+nav{
+    width: 75%;
 }
 
 
@@ -37,7 +46,6 @@ main
     height: auto;
 
 }
-
 
 
 
@@ -73,6 +81,40 @@ footer
   .python-section code {
     display: block;
   }
+
+
+  @media (max-width: 767px) {
+    .image_top
+    {
+        width: 100%;     
+        height: auto;
+    
+    }
+
+
+    header{
+        width: 100%;
+    }
+
+
+    nav{
+        width: 100%;
+    }
+
+    .small_image
+
+    {
+
+     max-width: 100%;
+    }
+
+
+    section{
+        padding: 1rem;
+    }
+
+
+}
 
 
 
