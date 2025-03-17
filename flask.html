@@ -20,7 +20,7 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
   />
     <link href="styles.css" rel="stylesheet" />
-    <link href="/images/flaskFavicon.png" rel="icon" type="image/png" />
+    <link href="/images/logo.png" rel="icon" type="image/png" />
     <title>Flask</title>
   </head>
   <body class="d-flex flex-column align-items-center">
@@ -30,6 +30,7 @@
     </header>
     <main class="image_top">
       <section class="image_top">
+        <h3>Client Side versus Server Side Rendering</h3> 
         <p>
           In week 9, we discovered a Python framework called Flask.<br>
 While taking the course, something didn't seem right to me.<br>
@@ -39,7 +40,7 @@ I kept wondering, "Why is the UI being generated on the server?"<br>
 This confusion resulted from my previous exposure being limited to Client Side Rendering development (CSR) and pushed me to explore the difference between those 2 approaches.<br>
 
 
-<h4>Client Side versus Server Side Rendering</h4> 
+
 <br>
 
 <b>Client Side Rendering:</b> We typically use a separate application to build the frontend.<br>
@@ -73,7 +74,7 @@ There are 2 kinds of authorization : sessions based and token based authorizatio
 In sessions, the session data is stored on the server and a session ID is sent to the client and stored in a cookie.<br>
 Sessions are stateful meaning the client is coupled to a specific server.<br>
 In distributed systems where the application is running on multiple servers, all the server needs access to the same session data which adds latency as each server needs to make a request to the session store.<br>
-Sessions offer a more flexible way to invalidate the access to the server. 
+Sessions offer a more flexible way to invalidate the access to the server. <br>
 
 <b>Tokens</b><br>
 A token is sent to the client containing all necessary information for authorization. The token is sent with every request and uses asymetric keys.<br>
