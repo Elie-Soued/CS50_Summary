@@ -35,7 +35,7 @@ header{
     width:75%
 }
 
-nav{
+.nav_bar{
     width: 75%;
 }
 
@@ -44,6 +44,7 @@ nav{
 {
     width: 75%;     
     height: auto;
+
 
 }
 
@@ -97,9 +98,10 @@ footer
     }
 
 
-    nav{
+    .nav_bar{
         width: 100%;
     }
+    
 
     .small_image
 
