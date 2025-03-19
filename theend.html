@@ -99,16 +99,17 @@ Let's take a look at how the recursive function works:<br>
 <b>Stage 1: winding</b> <br>
 
 <pre class="code-block"><code>
-multiply_recursive(5,4);<br>
-
-multiply_recursive(5,4) -> returns 5 + multiply_recursive(5,3);<br>
-
-multiply_recursive(5,3) -> returns 5 + multiply_recursive(5,2);<br>
-
-multiply_recursive(5,2) -> returns 5 + multiply_recursive(5,1);<br>
-</code>
-</pre>
-
+  multiply_recursive(5,4);
+  
+      ↓
+  multiply_recursive(5,4) → returns 5 + multiply_recursive(5,3);
+  
+      ↓
+  multiply_recursive(5,3) → returns 5 + multiply_recursive(5,2);
+  
+      ↓
+  multiply_recursive(5,2) → returns 5 + multiply_recursive(5,1);
+  </code></pre>
 
 <b>Stage 2 : base case</b> <br>
 
@@ -138,7 +139,7 @@ multiply_recursive(5,4) = return 5 + 15 // 20<br>
 <br>
 <h4>The problem with recursion</h4>
 
-By looking at the 3 stages of recursion, we can directly see how recursion can be present <b>performance issues</b>.<br>
+By looking at the 3 stages of recursion, we can directly see how recursion can cause <b>performance issues</b>.<br>
 Calling multiply_recursive(5,10000) for example, <b>will add 10000 calls on the call stack</b> which will cause a <b>stack overflow</b>.<br> 
 Calling multiply_iterative(5,10000) on the other hand will create a single function call on the call stack.<br>
 Both recursion and iteration have a time complexity of O(n).<br>

@@ -35,7 +35,7 @@
   
 
       <p>
-        SQL or structured query language is declarative language used for
+        SQL or structured query language is a declarative language used for
         relational databases.<br />
         It is important to note that everything that is done in SQL could be
         done in other languages.<br />
@@ -60,8 +60,10 @@ A primary key is a unique identifier that represents a row in a table.<br>
 A Foreign Key is a key that represent a primary key of a different table.<br>
 
 Let's take an example to better understand the relationship between primary and foreign key:<br>
-1-Table Company contains the following fields : Company Name, Product, Location and Company ID (Company ID is the primary key that will be used in a different table)<br>
-2-Table Employee contains the following fields : Employee Name, Employee position, Company ID ( Company ID is a foreign key that reference the company in the company table)<br>
+1-Table Company contains the following fields : <br>
+ Company Name, Product, Location and Company ID (Company ID is the primary key that will be used in a different table)<br>
+2-Table Employee contains the following fields : <br>
+ Employee Name, Employee position, Company ID ( Company ID is a foreign key that reference the company in the company table)<br>
 This is how combine information with SQL<br>
 
 In the case of many to many relations, we need to create a join table to connect the 2 tables.<br>
@@ -115,9 +117,8 @@ SELECT name FROM Student JOIN student_course ON Student.id = student_course.stud
 
 <br>
 <b>Indexes</b><br>
-create a B-tree structure (not binary tree structure) that allows us to access information faster.<br>
-improves performance a lot when we want to read data from the database but might slow down the insertion and deletion ( as we saw with tree like structure<br>
-That need to stay balanced). So they are great for read heavy sites.<br>
+Indexes create a B-tree structure (not binary tree structure) that allows us to access information faster.<br>
+They improve performance a lot when we want to read data from the database but might slow down the insertion and deletion ( as we saw with tree like structure that need to stay balanced). So they are great for read heavy sites.<br>
 <br>
 <b>Race conditions</b>
 <br>
@@ -129,7 +130,7 @@ For more on the topic look ACID properties in database<br>
 <br>
 <b>SQL Injection Attacks</b><br>
 SQL Injection Attacks are malicious inputs that could give access to unauthorized information.<br>
-If your API is using f format and not placeholders, I use could enter as username : name'-- <br>
+If your API is using f format and not placeholders, a user could enter as username : name'-- <br>
 The ' would close the first string and the -- would ignore everything after this command.<br>
 So basically I user could access the account of someone by only entering the username and not the password.<br>
 So use the placeholder instead of the f string.<br>
