@@ -56,29 +56,99 @@
         
         <h5>Primary key, foreign key and join tables</h5>
 
-A primary key is a unique identifier that represents a row in a table.<br>
-A Foreign Key is a key that represent a primary key of a different table.<br>
-
-Let's take an example to better understand the relationship between primary and foreign key:<br>
-1-Table Company contains the following fields : <br>
- Company Name, Product, Location and Company ID (Company ID is the primary key that will be used in a different table)<br>
-2-Table Employee contains the following fields : <br>
- Employee Name, Employee position, Company ID ( Company ID is a foreign key that reference the company in the company table)<br>
-This is how combine information with SQL<br>
-
-In the case of many to many relations, we need to create a join table to connect the 2 tables.<br>
-Let's take a look at an example here as well:<br>
-<br>
-
-1-Field of Student Table : name,  major, id (primary key)<br>
-2-Field of Courses Table :  subject,  duration, id (primary key)<br>
-If you want to know the names of all the student that took a specific course, will need to create a third table (join table):<br>
-3- student_course (join table) fields : student_id (foreign key) , course_id ( foreign key)<br>
-And then join the 2 tables on this table like this:<br>
-SELECT name FROM Student JOIN student_course ON Student.id = student_course.student_id  JOIN Courses ON Courses.id = student_course.course_id  WHERE Courses.subject = 'Computer Science';<br>
+        <p>
+          A Primary Key is a unique identifier for a row in a table. It ensures that each record in the table can be uniquely identified. <br>
+          A Foreign Key is a field in one table that refers to the <strong>Primary Key</strong> of another table. It establishes a relationship between the two tables. <br>
+          Let's consider two tables: <strong>Company</strong> and <strong>Employee</strong>.
       </p>
+       
 
-      <table class="table table-striped">
+      
+
+      <p> Here the <code>Company ID</code> serves as the <strong>Primary Key</strong>, ensuring each company has a unique identifier.</p>
+      
+      <table table class="table table-striped" style="border-collapse: collapse; width: 100%; font-size: 14px; width: auto;">
+          <tr>
+              <th>Company ID (PK)</th>
+              <th>Company Name</th>
+              <th>Product</th>
+              <th>Location</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td>Tech Corp</td>
+              <td>Software</td>
+              <td>USA</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>InnovateX</td>
+              <td>AI Tools</td>
+              <td>Germany</td>
+          </tr>
+      </table>
+      <br>
+ 
+      <p>And here the <code>Company ID</code> is a <strong>Foreign Key</strong>, linking each employee to a company from the <strong>Company Table</strong>.</p>
+      
+      <table table class="table table-striped" style="border-collapse: collapse; width: 100%; font-size: 14px; width: auto;">
+          <tr>
+              <th>Employee Name</th>
+              <th>Employee Position</th>
+              <th>Company ID (FK)</th>
+          </tr>
+          <tr>
+              <td>Alice</td>
+              <td>Developer</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>Bob</td>
+              <td>Manager</td>
+              <td>2</td>
+          </tr>
+      </table>
+      <br>
+      
+
+
+
+
+      <p>In a <strong>many-to-many relationship</strong>, a single record in one table can be associated with multiple records in another table, and vice versa. 
+      Since relational databases do not support direct many-to-many relationships, we use a <strong>join table</strong> (also called a <strong>junction table</strong>) to bridge the two tables. Consider the following tables:</p>
+      <ul>
+          <li><strong>Student</strong>: Stores information about students (e.g., name, major, and ID as the primary key).</li>
+          <li><strong>Courses</strong>: Stores information about courses (e.g., subject, duration, and ID as the primary key).</li>
+      </ul>
+      <p>To track which students are enrolled in which courses, we create a <strong>join table</strong> that contains foreign keys referencing both tables.</p>
+      
+      <pre style=" margin: 0; padding: 0;" >
+      <code>
+      CREATE TABLE student_course (
+          student_id INT,
+          course_id INT,
+          PRIMARY KEY (student_id, course_id),
+          FOREIGN KEY (student_id) REFERENCES Student(id) ON DELETE CASCADE,
+          FOREIGN KEY (course_id) REFERENCES Courses(id) ON DELETE CASCADE
+      );
+      </code>
+      </pre>
+      
+
+      <p>To retrieve the names of students who have taken a specific course (e.g., <em>Computer Science</em>), use the following query:</p>
+      <pre style=" margin: 0; padding: 0;">
+      <code>
+      SELECT Student.name 
+      FROM Student 
+      JOIN student_course ON Student.id = student_course.student_id 
+      JOIN Courses ON Courses.id = student_course.course_id 
+      WHERE Courses.subject = 'Computer Science';
+      </code>
+      </pre>
+    
+      <p><strong>Table Summary</strong></p>
+
+      <table class="table table-striped" style="border-collapse: collapse; width: 100%; font-size: 14px; width: auto;">
         <thead>
           <tr>
             <th>Relationship</th>
@@ -104,7 +174,7 @@ SELECT name FROM Student JOIN student_course ON Student.id = student_course.stud
             <td>Many-to-Many (M:M)</td>
             <td>Students ↔ Courses</td>
             <td>enrollments(student_id, course_id)</td>
-            <td>| Join table with two foreign keys. </td>
+            <td>Join table with two foreign keys. </td>
           </tr>
         </tbody>
       </table>
